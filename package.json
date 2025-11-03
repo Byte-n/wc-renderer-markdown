@@ -1,0 +1,18 @@
+{
+  "name": "vue-renderer-markdown",
+  "type": "module",
+  "version": "0.0.61-beta.2",
+  "scripts": {},
+  "overrides": {
+    "vite": {
+      "rollup": "npm:@rollup/wasm-node"
+    }
+  },
+  "devDependencies": {
+    "@rolldown/binding-win32-x64-msvc": "1.0.0-beta.45",
+    "@types/node": "^22.18.13",
+    "tsdown": "^0.15.12",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
+  }
+}

@@ -1,0 +1,22 @@
+import { css } from 'lit';
+
+export default css`
+  :host {
+    display: inline;
+  }
+
+  span {
+    display: inline;
+    font-weight: inherit;
+    vertical-align: baseline;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  :host([center]) span {
+    display: inline-flex;
+    justify-content: center;
+    width: 100%;
+  }
+`;
+
