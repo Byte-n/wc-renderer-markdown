@@ -12,9 +12,12 @@ export default class extends MarkdownNode<TextNode> {
   @property({ type: Boolean, reflect: true, attribute: 'center' })
   center: boolean = false;
 
-  protected updated (_changedProperties: PropertyValues) {
-    super.updated(_changedProperties);
-    this.center = this.node.center;
+  protected willUpdate (changedProperties: PropertyValues) {
+    super.willUpdate(changedProperties);
+    if (changedProperties.has('node')) {
+      const nextCenter = !!this.node?.center;
+      if (this.center !== nextCenter) this.center = nextCenter;
+    }
   }
 
   render() {

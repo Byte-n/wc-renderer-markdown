@@ -12,7 +12,7 @@ export default class Markdown extends LitElement {
   static styles = styles;
 
   @property()
-  content?: string = 'World';
+  content?: string = '';
 
 
   render () {
@@ -37,7 +37,8 @@ function renderComponents (nodes: ParsedNode[]) {
       (node: ParsedNode) => {
         const tag = nodeComponents[node.type as string]
           || unsafeStatic(`${config.componentPrefix}-text`);
-        
+
+        // console.log('tag:', tag, node);
         return staticHtml`<${tag} .node="${node}" .renderComponents="${renderComponents}" />`;
       },
     )

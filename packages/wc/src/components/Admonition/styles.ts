@@ -1,0 +1,16 @@
+import { css } from 'lit';
+
+export default css`
+  .admonition {
+    border-left: 4px solid var(--admonition-border, #cbd5e1);
+    padding: 0.5rem 0.75rem;
+    background: var(--admonition-bg, #f8fafc);
+    margin: 1rem 0;
+  }
+  .admonition-title {
+    font-weight: 600;
+    margin-bottom: 0.25rem;
+  }
+`;
+
+
