@@ -1,6 +1,6 @@
 import { html } from 'lit/static-html.js';
 import MarkdownNode, { customElement } from '@/customElement';
-import styles from './styles';
+import styles from '@/components/Strikethrough/index.lit.css';
 import { StrikethroughNode } from 'stream-markdown-parser';
 
 @customElement('strikethrough')

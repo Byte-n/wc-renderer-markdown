@@ -3,7 +3,7 @@ import { customElement as _customElement, property } from 'lit/decorators.js';
 import { nodeComponents } from './nodeComponents';
 import { config } from '@/config';
 import { LitElement } from 'lit';
-import { ParagraphNode, ParsedNode } from 'stream-markdown-parser';
+import { ParsedNode } from 'stream-markdown-parser';
 import { RenderComponents } from '@/markdown';
 
 export function customElement (name: string) {

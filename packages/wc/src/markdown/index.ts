@@ -1,7 +1,7 @@
 import { html, LitElement } from 'lit';
-import { html as staticHtml, literal, unsafeStatic } from 'lit/static-html.js';
+import { html as staticHtml, unsafeStatic } from 'lit/static-html.js';
 import { property } from 'lit/decorators.js';
-import styles from '@/markdown/styles';
+import style from '@/markdown/index.lit.css';
 import { getMarkdown, ParsedNode, parseMarkdownToStructure } from 'stream-markdown-parser';
 import { nodeComponents } from '@/nodeComponents';
 import { customElement } from '@/customElement';
@@ -9,7 +9,7 @@ import { config } from '@/config';
 
 @customElement('markdown')
 export default class Markdown extends LitElement {
-  static styles = styles;
+  static styles = style;
 
   @property()
   content?: string = '';
@@ -25,6 +25,7 @@ export default class Markdown extends LitElement {
         </div>
     `;
   }
+
   disconnectedCallback () {
     super.disconnectedCallback();
   }

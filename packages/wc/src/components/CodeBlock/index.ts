@@ -1,6 +1,6 @@
 import { html } from 'lit/static-html.js';
 import MarkdownNode, { customElement } from '@/customElement';
-import styles from './styles';
+import styles from '@/components/CodeBlock/index.lit.css';
 import { CodeBlockNode } from 'stream-markdown-parser';
 
 @customElement('code_block')

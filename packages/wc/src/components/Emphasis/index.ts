@@ -1,6 +1,6 @@
 import { html } from 'lit/static-html.js';
 import MarkdownNode, { customElement } from '@/customElement';
-import styles from './styles';
+import styles from '@/components/Emphasis/index.lit.css';
 import { EmphasisNode } from 'stream-markdown-parser';
 
 @customElement('emphasis')

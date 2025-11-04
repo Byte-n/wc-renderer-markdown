@@ -1,6 +1,6 @@
 import { html } from 'lit/static-html.js';
 import MarkdownNode, { customElement } from '@/customElement';
-import styles from './styles';
+import styles from '@/components/List/index.lit.css';
 import { ListNode } from 'stream-markdown-parser';
 
 @customElement('list')

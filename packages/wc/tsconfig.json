@@ -1,13 +1,17 @@
 {
   "compilerOptions": {
     "target": "ES2020",
-    "lib": ["dom"],
+    "lib": [
+      "dom"
+    ],
     "rootDir": "./src",
     "module": "ESNext",
     "moduleResolution": "bundler",
     "baseUrl": ".",
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": [
+        "src/*"
+      ]
     },
     "resolveJsonModule": true,
     "allowJs": false,

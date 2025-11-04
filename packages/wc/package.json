@@ -17,8 +17,8 @@
         "dist"
     ],
     "scripts": {
-        "dev": "tsdown --watch",
-        "build": "tsdown",
+        "dev": "rollup -c -w",
+        "build": "rollup -c",
         "test": "vitest",
         "test:run": "vitest --run",
         "typecheck": "tsc --noEmit",
@@ -30,9 +30,18 @@
         "@lit/context": "^1.1.6",
         "katex": "^0.16.25",
         "lit": "^3.3.1",
-        "stream-markdown-parser": "workspace:*"
+        "stream-markdown-parser": "workspace:*",
+        "tslib": "^2.8.1"
     },
     "devDependencies": {
-        "@types/node": "^22.18.13"
+        "@rollup/plugin-alias": "^6.0.0",
+        "@rollup/plugin-commonjs": "^26.0.0",
+        "@rollup/plugin-node-resolve": "^15.3.0",
+        "@rollup/plugin-typescript": "^12.1.2",
+        "@types/node": "^22.18.13",
+        "rollup": "^4.24.0",
+        "rollup-plugin-dts": "^6.1.1",
+        "rollup-plugin-lit-css": "^6.0.0",
+        "rollup-plugin-terser": "^7.0.2"
     }
 }

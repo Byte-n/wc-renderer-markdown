@@ -1,5 +1,2 @@
-import '@/components'
+import '@/components';
 import '@/markdown';
-
-
-

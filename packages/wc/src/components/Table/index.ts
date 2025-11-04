@@ -1,6 +1,6 @@
 import { html } from 'lit/static-html.js';
 import MarkdownNode, { customElement } from '@/customElement';
-import styles from './styles';
+import styles from '@/components/Table/index.lit.css';
 import { TableNode } from 'stream-markdown-parser';
 
 @customElement('table')
@@ -20,8 +20,8 @@ export default class extends MarkdownNode<TableNode> {
         <tbody>
           ${rows.map(row => html`<tr>
             ${row.cells.map(cell => cell.header
-              ? html`<th>${this.renderComponents(cell.children)}</th>`
-              : html`<td>${this.renderComponents(cell.children)}</td>`)}
+      ? html`<th>${this.renderComponents(cell.children)}</th>`
+      : html`<td>${this.renderComponents(cell.children)}</td>`)}
           </tr>`)}
         </tbody>
       </table>
