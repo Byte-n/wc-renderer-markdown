@@ -1,5 +1,9 @@
-input[type="checkbox"] {
+.checkbox-node {
+  margin-right: 0.5rem;
   vertical-align: middle;
 }
 
-
+.checkbox-input {
+  margin: 0;
+  cursor: default;
+}

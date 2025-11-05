@@ -1,9 +1,78 @@
-pre {
-  padding: 1rem;
-  overflow: auto;
-  background: var(--codeblock-bg, #0b1021);
-  color: var(--codeblock-fg, #e5e7eb);
-  border-radius: 0.375rem;
+code {
+  display: block;
+  padding: 12px 24px;
+  width: fit-content;
+  min-width: 100%;
+  line-height: 1.7;
+  transition: color .5s;
+  font-size: .875em;
+  font-family: ui-monospace, "Menlo", "Monaco", "Consolas", "Liberation Mono", "Courier New", monospace;
 }
 
+.box {
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid transparent;
+}
 
+.header {
+  padding: 10px 24px;
+  border: 1px solid transparent;
+}
+
+/* 主题选择器布局与样式 */
+.header {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.header .theme {
+  margin-left: auto;
+}
+
+.theme-select {
+  padding: 4px 8px;
+  font-size: .875em;
+  border-radius: 6px;
+  border: 1px solid currentColor;
+  background: transparent;
+  color: inherit;
+  outline: none;
+}
+
+pre {
+  display: block;
+  font-family: monospace;
+  unicode-bidi: isolate;
+  white-space: pre;
+  margin: 0;
+  padding: 0;
+}
+
+/*!* Shiki 行号（CSS 计数器方式，无需 transformers） *!*/
+
+code {
+  counter-reset: line;
+}
+
+code .line::before {
+  counter-increment: line;
+  content: counter(line);
+  display: inline-block;
+  width: 1rem;
+  margin-right: 1rem;
+  opacity: .5;
+  text-align: right;
+  user-select: none;
+}
+
+/* pre.has-line-numbers code .line { display: block; }
+pre.has-line-numbers code .line > .line-number {
+  display: inline-block;
+  width: 2.5rem;
+  margin-right: 1rem;
+  opacity: .5;
+  text-align: right;
+  user-select: none;
+} */

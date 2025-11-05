@@ -8,7 +8,6 @@ export default class extends MarkdownNode<BlockquoteNode> {
   static styles = [styles];
 
   render () {
-    // @ts-ignore
     const cite = this.node.cite;
     return html`
         <blockquote class="blockquote" dir="auto" cite="${cite}">

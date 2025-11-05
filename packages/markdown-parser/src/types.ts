@@ -145,10 +145,13 @@ export interface FootnoteReferenceNode extends BaseNode {
 
 export interface AdmonitionNode extends BaseNode {
   type: 'admonition'
-  kind: string // 'note' | 'warning' | 'danger' | 'info' | 'tip' 等
+  kind: AdmonitionKind
   title: string
   children: ParsedNode[]
+  collapsible?: boolean;
 }
+
+export type AdmonitionKind = 'note' | 'info' | 'tip' | 'warning' | 'danger' | 'caution' | 'error'
 
 export interface StrongNode extends BaseNode {
   type: 'strong'

@@ -8,7 +8,11 @@ export default class extends MarkdownNode<CheckboxNode> {
   static styles = styles;
 
   render () {
-    return html`<input type="checkbox" .checked=${this.node.checked} disabled>`;
+    return html`
+        <span class="checkbox-node">
+          <input .checked=${this.node.checked} disabled type="checkbox" class="checkbox-input">
+        </span>
+    `;
   }
 }
 
