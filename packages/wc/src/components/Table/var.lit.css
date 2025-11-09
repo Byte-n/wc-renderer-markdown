@@ -1,0 +1,22 @@
+:host {
+  --table-bg: #ffffff;
+  --table-border-color: #e5e7eb;
+  --table-header-bg: #f9fafb;
+  --table-header-color: #111827;
+  --table-cell-color: #374151;
+  --table-row-hover-bg: #f9fafb;
+  --table-row-even-bg: transparent;
+  --table-header-border: #e5e7eb;
+}
+
+:host([dark]) {
+  --table-bg: #1e293b;
+  --table-border-color: rgba(148, 163, 184, 0.12);
+  --table-header-bg: #0f172a;
+  --table-header-color: #f1f5f9;
+  --table-cell-color: #cbd5e1;
+  --table-row-hover-bg: #334155;
+  --table-row-even-bg: rgba(148, 163, 184, 0.03);
+  --table-header-border: rgba(148, 163, 184, 0.15);
+}
+

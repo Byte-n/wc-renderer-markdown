@@ -1,0 +1,12 @@
+:host {
+  --image-error-bg: #f3f4f6;
+  --image-error-color: #ef4444;
+  --image-caption-color: #6b7280;
+}
+
+:host([dark]) {
+  --image-error-bg: #1f2937;
+  --image-error-color: #f87171;
+  --image-caption-color: #9ca3af;
+}
+

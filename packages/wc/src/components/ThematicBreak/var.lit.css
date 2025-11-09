@@ -1,0 +1,8 @@
+:host {
+  --thematic-break-border-color: #e2e8f0;
+}
+
+:host([dark]) {
+  --thematic-break-border-color: rgba(255, 255, 255, 0.1);
+}
+

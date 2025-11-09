@@ -1,0 +1,8 @@
+:host {
+  --link-color: #0366d6;
+}
+
+:host([dark]) {
+  --link-color: #58a6ff;
+}
+

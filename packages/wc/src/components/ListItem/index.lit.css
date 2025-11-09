@@ -1,0 +1,13 @@
+li {
+  padding-left: 0.375rem;
+}
+
+li::marker {
+  color: var(--list-item-marker-color);
+}
+
+li.ordered::marker {
+  color: var(--list-item-ordered-marker-color);
+}
+
+

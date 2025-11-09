@@ -1,0 +1,10 @@
+:host {
+  --inline-code-bg: rgba(135, 131, 120, 0.15);
+  --inline-code-color: #EB5757;
+}
+
+:host([dark]) {
+  --inline-code-bg: rgba(135, 131, 120, 0.25);
+  --inline-code-color: #f87171;
+}
+

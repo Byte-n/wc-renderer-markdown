@@ -1,18 +1,22 @@
 import { html } from 'lit/static-html.js';
-import MarkdownNode, { customElement } from '@/customElement';
+import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/CodeBlock/index.lit.css';
 import { CodeBlockNode } from 'stream-markdown-parser';
 import { state } from 'lit/decorators.js';
-import { BundledLanguage, BundledTheme, bundledThemes, bundledThemesInfo, getSingletonHighlighter, HighlighterGeneric } from 'shiki';
+import {
+  BundledLanguage, BundledTheme, bundledThemes, bundledThemesInfo, getSingletonHighlighter, HighlighterGeneric,
+} from 'shiki';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { styleMap } from 'lit/directives/style-map.js';
+import MarkdownNodeElement from 'src/MarkdownNodeElement';
 
 @customElement('code_block')
-export default class extends MarkdownNode<CodeBlockNode> {
+export default class extends MarkdownNodeElement<CodeBlockNode> {
   static styles = styles;
 
   @state()
   curTheme: string = 'dracula-soft';
+  singleton: HighlighterGeneric<BundledLanguage, BundledTheme>;
 
   get language () {
     const [language] = this.node.language.split(':');
@@ -58,8 +62,6 @@ export default class extends MarkdownNode<CodeBlockNode> {
     };
   }
 
-  singleton: HighlighterGeneric<BundledLanguage, BundledTheme>;
-
   async connectedCallback () {
     super.connectedCallback();
     const [language] = this.node.language.split(':');
@@ -101,12 +103,12 @@ export default class extends MarkdownNode<CodeBlockNode> {
             <div class="header" style="${styleMap(headerStyle)}">
                 <span>${this.language}</span>
                 ${
-                        !this.fileName ? null
-                                : html`
+      !this.fileName ? null
+        : html`
                                     <span>:</span>
                                     <span>${this.fileName}</span>
                                 `
-                }
+    }
                 ${this.renderThemeOptions()}
             </div>
             ${unsafeHTML(this.codeHTML)}
@@ -121,17 +123,17 @@ export default class extends MarkdownNode<CodeBlockNode> {
         <div class="theme">
             <select class="theme-select" style="${styleMap(selectStyle)}" @change=${this.onSelectThemeOption}>
                 ${
-                        themes.map((value, idx) =>
-                                html`
+      themes.map((value, idx) =>
+        html`
                                     <option
                                             style="${styleMap(optionStyle)}" value="${value}"
                                             ?selected=${this.curTheme === value}
                                     >
-                                        ${bundledThemesInfo[idx].displayName}
+                                        ${bundledThemesInfo[idx].displayName} 
                                     </option>
                                 `,
-                        )
-                }
+      )
+    }
             </select>
         </div>
     `;

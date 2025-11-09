@@ -10,6 +10,7 @@ import '@/components/Superscript';
 import '@/components/HardBreak';
 import '@/components/ThematicBreak';
 import '@/components/Link';
+import '@/components/Label';
 import '@/components/Image';
 import '@/components/List';
 import '@/components/ListItem';

@@ -1,10 +1,11 @@
 import { html } from 'lit/static-html.js';
-import MarkdownNode, { customElement } from '@/customElement';
+import { customElement } from '@/MarkdownNodeElement/customElement';
 import { BlockquoteNode } from 'stream-markdown-parser';
 import styles from '@/components/Blockquote/index.lit.css';
+import MarkdownNodeElement from 'src/MarkdownNodeElement';
 
 @customElement('blockquote')
-export default class extends MarkdownNode<BlockquoteNode> {
+export default class extends MarkdownNodeElement<BlockquoteNode> {
   static styles = [styles];
 
   render () {

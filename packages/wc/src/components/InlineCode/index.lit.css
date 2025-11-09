@@ -1,7 +1,17 @@
 code {
-  background: var(--inlinecode-bg, #f3f4f6);
-  padding: 0.1rem 0.3rem;
+  display: inline-block;
+  padding: 0.125rem 0.25rem;
   border-radius: 0.25rem;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  background: var(--inline-code-bg);
+  color: var(--inline-code-color);
+  font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+}
+
+code::before,
+code::after {
+  content: '';
 }
 
 

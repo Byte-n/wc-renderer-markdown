@@ -1,6 +1,20 @@
-a {
-  color: var(--link-color, #2563eb);
-  text-decoration: underline;
+.link-node {
+  color: var(--link-color);
+  text-decoration: none;
+  display: inline-flex;
 }
 
+.link-node:hover {
+  text-decoration: underline;
+  text-underline-offset: 0.2rem;
+}
 
+.link-loading {
+  display: inline-flex;
+  align-items: baseline;
+  color: var(--link-color);
+}
+
+.link-loading .link-text {
+  line-height: normal;
+}

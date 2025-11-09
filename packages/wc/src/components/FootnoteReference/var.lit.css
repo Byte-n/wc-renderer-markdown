@@ -1,0 +1,8 @@
+:host {
+  --footnote-reference-link-color: #0366d6;
+}
+
+:host([dark]) {
+  --footnote-reference-link-color: #58a6ff;
+}
+

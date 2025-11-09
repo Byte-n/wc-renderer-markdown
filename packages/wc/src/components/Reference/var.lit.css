@@ -1,0 +1,10 @@
+:host {
+  --reference-bg: rgba(68, 138, 255, 0.1);
+  --reference-bg-hover: rgba(68, 138, 255, 0.24);
+}
+
+:host([dark]) {
+  --reference-bg: rgba(68, 138, 255, 0.12);
+  --reference-bg-hover: rgba(68, 138, 255, 0.2);
+}
+

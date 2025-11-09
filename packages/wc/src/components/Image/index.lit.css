@@ -1,5 +1,105 @@
-img {
-  max-width: 200px;
+.image-figure {
+  text-align: center;
+  margin: 2rem 0;
 }
 
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+.image {
+  max-width: 24rem;
+  height: auto;
+  border-radius: 0.5rem;
+  transition: opacity 200ms ease-in-out;
+}
+
+.image-loading {
+  opacity: 0;
+}
+
+.image-loaded {
+  opacity: 1;
+}
+
+/* 占位符层 */
+.placeholder-layer {
+  max-width: 24rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  will-change: transform, opacity;
+}
+
+.placeholder-text {
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+/* 加载动画 - 旋转的圆圈 */
+.spinner {
+  width: 1rem;
+  height: 1rem;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  border-top-color: transparent;
+  animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 错误层 */
+.error-layer {
+  max-width: 24rem;
+  padding: 0.5rem 1rem;
+  background-color: var(--image-error-bg);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-radius: 0.5rem;
+  color: var(--image-error-color);
+}
+
+.error-icon {
+  flex-shrink: 0;
+}
+
+.error-text {
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+/* 图片说明 */
+.image-caption {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--image-caption-color);
+  font-style: italic;
+}
+
+/* 过渡动画 - 图片切换时的淡入淡出效果 */
+.image-wrapper {
+  transition: opacity 220ms ease, transform 220ms ease;
+}
+
+/* 尊重用户的减少动画偏好 */
+@media (prefers-reduced-motion: reduce) {
+  .spinner {
+    animation: none !important;
+  }
+
+  .image-wrapper {
+    transition: none !important;
+  }
+
+  .image {
+    transition: none !important;
+  }
+}

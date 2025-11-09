@@ -1,13 +1,37 @@
 import { html } from 'lit/static-html.js';
-import MarkdownNode, { customElement } from '@/customElement';
+import { customElement } from '@/MarkdownNodeElement/customElement';
 import { FootnoteReferenceNode } from 'stream-markdown-parser';
+import style from '@/components/FootnoteReference/index.lit.css';
+import MarkdownNodeElement from 'src/MarkdownNodeElement';
 
 @customElement('footnote_reference')
-export default class extends MarkdownNode<FootnoteReferenceNode> {
+export default class extends MarkdownNodeElement<FootnoteReferenceNode> {
+  static styles = [style];
+
+  get href () {
+    return `[footnote="${this.node.id}"]`;
+  }
+
   render () {
     const { id } = this.node;
-    return html`<sup><a href="#fn-${id}">[${id}]</a></sup>`;
+    return html`<sup class="footnote-reference" @click="${this.handleScroll}">
+        <span class="footnote-link">[${id}]</span>
+    </sup>`;
+  }
+
+  handleScroll () {
+    if (typeof document === 'undefined') {
+      // SSR: nothing to do
+      return;
+    }
+    const element = this.markdownRoot.renderRoot.querySelector(this.href);
+    if (element) {
+      element.scrollIntoView({ behavior: 'smooth' });
+    } else {
+      console.warn(`Element with href: ${this.href} not found`);
+    }
   }
 }
+
 
 

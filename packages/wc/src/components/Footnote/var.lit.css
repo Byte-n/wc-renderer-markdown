@@ -1,0 +1,10 @@
+:host {
+  --footnote-border-color: #eaecef;
+  --footnote-id-color: #0366d6;
+}
+
+:host([dark]) {
+  --footnote-border-color: rgba(255, 255, 255, 0.1);
+  --footnote-id-color: #58a6ff;
+}
+

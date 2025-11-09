@@ -1,9 +1,19 @@
+dl {
+  margin: 0 0 1rem;
+}
+
 dt {
   font-weight: 600;
+  margin-top: 0.5rem;
 }
 
 dd {
-  margin: 0 0 0.5rem 1rem;
+  margin-left: 1rem;
+  margin-bottom: 0.5rem;
 }
 
-
+/* todo 避免列表中嵌套 NodeRenderer 的 content-visibility 导致空白占位 */
+/*dl :deep(.markdown-renderer) {*/
+/*  content-visibility: visible;*/
+/*  contain-intrinsic-size: auto;*/
+/*}*/

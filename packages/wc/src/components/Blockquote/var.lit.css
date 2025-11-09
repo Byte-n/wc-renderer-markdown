@@ -1,0 +1,8 @@
+:host {
+  --blockquote-border-color: #e2e8f0;
+}
+
+:host([dark]) {
+  --blockquote-border-color: rgba(255, 255, 255, 0.1);
+}
+

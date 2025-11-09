@@ -1,8 +1,9 @@
 import { html } from 'lit/static-html.js';
-import MarkdownNode, { customElement } from '@/customElement';
+import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Admonition/index.lit.css';
 import { AdmonitionKind, AdmonitionNode } from 'stream-markdown-parser';
 import { state } from 'lit/decorators.js';
+import MarkdownNodeElement from 'src/MarkdownNodeElement';
 
 
 // 不同类型的警告块图标（显式类型以便编辑器提示）
@@ -18,7 +19,7 @@ const iconMap: Record<AdmonitionKind, string> = {
 };
 
 @customElement('admonition')
-export default class extends MarkdownNode<AdmonitionNode> {
+export default class extends MarkdownNodeElement<AdmonitionNode> {
   static styles = styles;
 
   @state()

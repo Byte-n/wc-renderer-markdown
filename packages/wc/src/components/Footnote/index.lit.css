@@ -1,6 +1,27 @@
 .footnote {
-  font-size: 0.9em;
-  color: var(--muted-fg, #6b7280);
+  display: flex;
+  margin-top: 0.5rem /* 8px */;
+  margin-bottom: 0.5rem /* 8px */;
+  font-size: 0.875rem /* 14px */;
+  line-height: 1.625;
+  border-top-width: 1px;
+  border-color: var(--footnote-border-color);
+  padding-top: 0.5rem /* 8px */;
 }
 
+.id {
+  color: var(--footnote-id-color);
+  font-weight: 600;
+  margin-right: 0.5rem;
+}
 
+.ch {
+  flex: 1;
+}
+
+/*!* 脚注中嵌套 NodeRenderer 关闭 content-visibility 占位，防止空白内容 *!*/
+/*[class*="footnote-"] :deep(.markdown-renderer),*/
+/*.flex-1 :deep(.markdown-renderer) {*/
+/*  content-visibility: visible;*/
+/*  contain-intrinsic-size: auto;*/
+/*}*/

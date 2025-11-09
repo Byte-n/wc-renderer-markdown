@@ -1,0 +1,37 @@
+:host {
+  --admonition-bg: #f8f8f8;
+  --admonition-border: #eaecef;
+  --admonition-header-bg: rgba(0, 0, 0, 0.03);
+  --admonition-text: #111827;
+  --admonition-muted: #374151;
+
+  --admonition-note-color: #448aff;
+  --admonition-tip-color: #00bfa5;
+  --admonition-warning-color: #ff9100;
+  --admonition-danger-color: #ff5252;
+
+  --admonition-note-header-bg: rgba(68, 138, 255, 0.16);
+  --admonition-tip-header-bg: rgba(0, 191, 165, 0.16);
+  --admonition-warning-header-bg: rgba(255, 145, 0, 0.16);
+  --admonition-danger-header-bg: rgba(255, 82, 82, 0.16);
+  --admonition-toggle-focus-outline: rgba(0, 0, 0, 0.18);
+}
+
+:host([dark]) {
+  --admonition-bg: #0b1220;
+  --admonition-border: rgba(255, 255, 255, 0.06);
+  --admonition-header-bg: rgba(255, 255, 255, 0.03);
+  --admonition-text: #e6eef8;
+  --admonition-muted: #cbd5e1;
+
+  --admonition-note-color: #448aff;
+  --admonition-tip-color: #00bfa5;
+  --admonition-warning-color: #ff9100;
+  --admonition-danger-color: #ff5252;
+
+  --admonition-note-header-bg: rgba(68, 138, 255, 0.12);
+  --admonition-tip-header-bg: rgba(0, 191, 165, 0.12);
+  --admonition-warning-header-bg: rgba(255, 145, 0, 0.12);
+  --admonition-danger-header-bg: rgba(255, 82, 82, 0.12);
+  --admonition-toggle-focus-outline: rgba(255, 255, 255, 0.08);
+}

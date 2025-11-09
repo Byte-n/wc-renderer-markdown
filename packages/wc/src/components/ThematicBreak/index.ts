@@ -1,11 +1,17 @@
 import { html } from 'lit/static-html.js';
-import MarkdownNode, { customElement } from '@/customElement';
+import { customElement } from '@/MarkdownNodeElement/customElement';
 import { ThematicBreakNode } from 'stream-markdown-parser';
+import style from '@/components/ThematicBreak/index.lit.css';
+import MarkdownNodeElement from 'src/MarkdownNodeElement';
 
 @customElement('thematic_break')
-export default class extends MarkdownNode<ThematicBreakNode> {
+export default class extends MarkdownNodeElement<ThematicBreakNode> {
+  static styles = [style];
+
   render () {
-    return html`<hr>`;
+    console.log('thematic_break', this.node);
+    return html`
+        <hr>`;
   }
 }
 

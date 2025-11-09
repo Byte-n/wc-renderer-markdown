@@ -1,12 +1,21 @@
+blockquote {
+  display: block;
+  margin-block-start: 0;
+  margin-block-end: 0;
+  margin-inline-start: 0;
+  margin-inline-end: 0;
+  unicode-bidi: isolate;
+}
+
 .blockquote {
   font-weight: 500;
   font-style: italic;
-  /*todo: 补充--blockquote-border-color的颜色*/
-  border-left: 0.25rem solid var(--blockquote-border-color, #e2e8f0);
+  border-left: 0.25rem solid var(--blockquote-border-color);
   quotes: "\201C" "\201D" "\2018" "\2019";
   margin-top: 1.6em;
   margin-bottom: 1.6em;
   padding-left: 1em;
+  padding-block: 0.15em;
 }
 
 /* todo 防止内部 NodeRenderer 使用 content-visibility: auto 时在大文档滚动中出现“高但空白”的占位 */

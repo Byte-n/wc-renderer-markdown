@@ -1,0 +1,14 @@
+.footnote-reference {
+  font-size: 0.75em;
+  line-height: 0;
+}
+
+.footnote-link {
+  color: var(--footnote-reference-link-color);
+  text-decoration: none;
+}
+
+.footnote-link:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

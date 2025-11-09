@@ -1,0 +1,15 @@
+.reference-node {
+  cursor: pointer;
+  background-color: var(--reference-bg);
+  font-size: 0.75rem;
+  border-radius: 0.375rem;
+  padding: 0.125rem 0.375rem;
+  margin: 0 0.125rem;
+  display: inline-block;
+  transition: background-color 0.2s;
+}
+
+.reference-node:hover {
+  background-color: var(--reference-bg-hover);
+}
+

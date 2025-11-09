@@ -1,0 +1,7 @@
+hr {
+  border-top-width: 1px;
+  border-color: var(--thematic-break-border-color);
+  border-style: solid;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
