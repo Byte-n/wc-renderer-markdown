@@ -25,6 +25,12 @@ export interface ParagraphNode extends BaseNode {
   maybeCheckbox?: boolean
 }
 
+export interface LabelNode extends BaseNode {
+  type: 'label'
+  for?: string
+  children: ParsedNode[]
+}
+
 export interface ListNode extends BaseNode {
   type: 'list'
   ordered: boolean
@@ -242,6 +248,7 @@ export type ParsedNode
   = | TextNode
     | HeadingNode
     | ParagraphNode
+    | LabelNode
     | ListNode
     | ListItemNode
     | CodeBlockNode
@@ -276,6 +283,7 @@ export type ParsedNode
 export interface CustomComponents {
   text: unknown
   paragraph: unknown
+  label: unknown
   heading: unknown
   code_block: unknown
   list: unknown

@@ -17,6 +17,7 @@ import { parseStrongToken } from './strong-parser'
 import { parseSubscriptToken } from './subscript-parser'
 import { parseSuperscriptToken } from './superscript-parser'
 import { parseTextToken } from './text-parser'
+import { parseLabelToken } from './label-parser'
 
 // Process inline tokens (for text inside paragraphs, headings, etc.)
 export function parseInlineTokens(tokens: MarkdownToken[], raw?: string, pPreToken?: MarkdownToken): ParsedNode[] {
@@ -416,6 +417,14 @@ export function parseInlineTokens(tokens: MarkdownToken[], raw?: string, pPreTok
         resetCurrentTextNode()
         pushNode(parseMathInlineToken(token))
         i++
+        break
+      }
+
+      case 'label_open': {
+        resetCurrentTextNode()
+        const { node, nextIndex } = parseLabelToken(tokens, i)
+        pushNode(node)
+        i = nextIndex
         break
       }
 
