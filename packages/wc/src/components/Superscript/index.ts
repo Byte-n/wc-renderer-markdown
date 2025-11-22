@@ -1,15 +1,15 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Superscript/index.lit.css';
 import { SuperscriptNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('superscript')
-export default class extends MarkdownNodeElement<SuperscriptNode> {
+export default class extends NodeElement<SuperscriptNode> {
   static styles = styles;
 
   render () {
-    return html`<sup>${this.renderComponents(this.node.children)}</sup>`;
+    return html`<sup>${renderComponents(this.node.children)}</sup>`;
   }
 }
 

@@ -1,16 +1,16 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import { InsertNode } from 'stream-markdown-parser';
 import style from '@/components/Insert/index.lit.css';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('insert')
-export default class extends MarkdownNodeElement<InsertNode> {
+export default class extends NodeElement<InsertNode> {
   static styles = [style];
 
   render () {
     return html`
-        <ins>${this.renderComponents(this.node.children)}</ins>`;
+        <ins>${renderComponents(this.node.children)}</ins>`;
   }
 }
 

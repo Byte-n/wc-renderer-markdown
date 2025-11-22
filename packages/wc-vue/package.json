@@ -1,0 +1,67 @@
+{
+  "name": "wc-renderer-markdown-vue",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Vue wrapper for wc-renderer-markdown - 基于 Web Components 的 Markdown 渲染器 Vue 封装",
+  "author": "Byte-n",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Byte-n/wc-renderer-markdown"
+  },
+  "homepage": "https://github.com/Byte-n/wc-renderer-markdown#readme",
+  "bugs": {
+    "url": "https://github.com/Byte-n/wc-renderer-markdown/issues"
+  },
+  "keywords": [
+    "markdown",
+    "vue",
+    "web-components",
+    "renderer",
+    "wrapper"
+  ],
+  "packageManager": "pnpm@10.20.0",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.es.js",
+      "require": "./dist/index.cjs.js"
+    }
+  },
+  "main": "./dist/index.cjs.js",
+  "module": "./dist/index.es.js",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite build --watch",
+    "watch": "vite build --watch",
+    "build": "vite build",
+    "test": "vitest",
+    "test:run": "vitest --run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint . --cache",
+    "lint:fix": "eslint . --cache --fix",
+    "prepublishOnly": "pnpm run build"
+  },
+  "dependencies": {
+    "vue-demi": "^0.14.10"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.0.0-rc.1",
+    "vue": "^2.0.0 || >=3.0.0",
+    "wc-renderer-markdown": "workspace:*"
+  },
+  "peerDependenciesMeta": {
+    "@vue/composition-api": {
+      "optional": true
+    }
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "vite": "7.1.11",
+    "vite-plugin-dts": "^4.5.4",
+    "vue": "^3.0.0"
+  }
+}

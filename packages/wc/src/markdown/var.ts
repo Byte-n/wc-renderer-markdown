@@ -9,6 +9,7 @@ import ListItemCssVar from '@/components/ListItem/var.lit.css';
 import ReferenceCssVar from '@/components/Reference/var.lit.css';
 import TableCssVar from '@/components/Table/var.lit.css';
 import ThematicBreakCssVar from '@/components/ThematicBreak/var.lit.css';
+import LoadingCssVar from '@/components/Loading/var.lit.css';
 import { type CSSResult } from 'lit';
 
 export default [
@@ -23,4 +24,5 @@ export default [
   ReferenceCssVar,
   TableCssVar,
   ThematicBreakCssVar,
+  LoadingCssVar
 ] as CSSResult[];

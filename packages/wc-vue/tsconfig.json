@@ -1,0 +1,26 @@
+{
+  "extends": "../../tsconfig.json",
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "ES2015"
+    ],
+    "rootDir": "./src",
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ],
+      "wc-renderer-markdown": [
+        "../wc/"
+      ]
+    },
+    "outDir": "./dist"
+  },
+  "include": [
+    "src/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
+}

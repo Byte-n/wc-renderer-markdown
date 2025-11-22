@@ -1,15 +1,15 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Link/index.lit.css';
 import { LinkNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 interface LinkNodeWithLoading extends LinkNode {
   loading?: boolean;
 }
 
 @customElement('link')
-export default class extends MarkdownNodeElement<LinkNode> {
+export default class extends NodeElement<LinkNode> {
   static styles = styles;
 
   // 获取链接文本（用于 tooltip 和 aria-label）
@@ -43,7 +43,7 @@ export default class extends MarkdownNodeElement<LinkNode> {
         target="_blank"
         rel="noopener noreferrer"
       >
-        ${this.renderComponents(this.node.children)}
+        ${renderComponents(this.node.children)}
       </a>
     `;
   }

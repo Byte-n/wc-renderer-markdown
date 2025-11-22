@@ -1,7 +1,27 @@
 {
-    "name": "wc",
+    "name": "wc-renderer-markdown",
     "type": "module",
-    "version": "0.0.10",
+    "version": "0.0.1",
+    "description": "基于 Web Components 的现代化 Markdown 渲染器",
+    "author": "Byte-n",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/Byte-n/wc-renderer-markdown"
+    },
+    "homepage": "https://github.com/Byte-n/wc-renderer-markdown#readme",
+    "bugs": {
+        "url": "https://github.com/Byte-n/wc-renderer-markdown/issues"
+    },
+    "keywords": [
+        "markdown",
+        "web-components",
+        "lit",
+        "renderer",
+        "katex",
+        "shiki",
+        "syntax-highlight"
+    ],
     "packageManager": "pnpm@10.20.0",
     "exports": {
         ".": {
@@ -26,10 +46,12 @@
         "lint:fix": "eslint . --cache --fix",
         "prepublishOnly": "pnpm run build"
     },
+    "peerDependencies": {
+        "lit": "^3.0.0",
+        "@lit/context": "^1.0.0"
+    },
     "dependencies": {
-        "@lit/context": "^1.1.6",
         "katex": "^0.16.25",
-        "lit": "^3.3.1",
         "shiki": "^3.14.0",
         "stream-markdown-parser": "workspace:*",
         "tslib": "^2.8.1"

@@ -1,6 +1,19 @@
+export function steamMarkdownContent (
+  cb: (text: string) => void,
+) {
+  let i = 0;
+  const timer = setInterval(() => {
+    i += 1;
+    if (i > streamContent.length) {
+      clearInterval(timer);
+      return;
+    }
+    cb(streamContent.slice(0, i));
+  }, 5);
+}
+
+
 export const streamContent = `
-
-
 # 1.标题1
 
 ## 2.标题2
@@ -18,15 +31,11 @@ export const streamContent = `
 
 ==highlighted==
 
-# 自定义组件
-
-<thinking>这是一段自定义解析处理的thinking组件</thinking>
-
 # 块
 >>>I'll create a simple Electron + Vue chat application demo. Here's the structure:
 
 # 尾注、硬换行，行内代码
-Here's a simple footnote,[^1] and here's a longer one.[^bignote]  
+Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 硬换行，行内代码: \`Code\`
 
 [^1]: This is the first footnote.
@@ -64,7 +73,7 @@ TODO的列表
 
 引用：
 这是引用[1]。
- 
+
 
 ##  表格
 
@@ -80,9 +89,9 @@ TODO的列表
 | 内容1  |  内容2   |  内容3 |
 | 内容4  |  内容5   |  内容6 |
 
-我将为您输出泰勒公式的一般形式及其常见展开式。
-
 ---
+
+我将为您输出泰勒公式的一般形式及其常见展开式。
 
 ## 1. 泰勒公式（Taylor's Formula）
 
@@ -436,4 +445,5 @@ graph TD
 总之，\(\boldsymbol{\alpha}^T \boldsymbol{\beta} = 0\) 直接体现了正交补空间的关系：它表明一个向量属于另一个向量张成子空间的正交补空间。如果你有更多向量或子空间，这种联系可以进一步深化。
 
 **示例：** emm\`1-(5)\`、\`3-(3)\`、\`3-(4)\` complex test \`1-(4)\`“heiheihei”中，hello world。
-`
+`;
+

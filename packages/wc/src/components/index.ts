@@ -28,3 +28,5 @@ import '@/components/MathInline';
 import '@/components/MathBlock';
 import '@/components/Reference';
 import '@/components/Checkbox';
+import '@/components/HtmlElement';
+import '@/components/Loading';

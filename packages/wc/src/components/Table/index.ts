@@ -1,11 +1,11 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Table/index.lit.css';
 import { TableNode, TableRowNode, TableCellNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('table')
-export default class extends MarkdownNodeElement<TableNode> {
+export default class extends NodeElement<TableNode> {
   static styles = styles;
 
   /**
@@ -42,7 +42,7 @@ export default class extends MarkdownNodeElement<TableNode> {
     const textAlign = cell.textAlign || 'left';
     return html`
       <th dir="auto" class="table-header-cell" style="text-align: ${textAlign}">
-        ${this.renderComponents(cell.children)}
+        ${renderComponents(cell.children)}
       </th>
     `;
   }
@@ -70,7 +70,7 @@ export default class extends MarkdownNodeElement<TableNode> {
     const textAlign = cell.textAlign || 'left';
     return html`
       <td dir="auto" class="table-cell" style="text-align: ${textAlign}">
-        ${this.renderComponents(cell.children)}
+        ${renderComponents(cell.children)}
       </td>
     `;
   }

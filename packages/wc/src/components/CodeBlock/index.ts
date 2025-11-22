@@ -1,5 +1,4 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/CodeBlock/index.lit.css';
 import { CodeBlockNode } from 'stream-markdown-parser';
 import { state } from 'lit/decorators.js';
@@ -8,10 +7,11 @@ import {
 } from 'shiki';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { styleMap } from 'lit/directives/style-map.js';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('code_block')
-export default class extends MarkdownNodeElement<CodeBlockNode> {
+export default class extends NodeElement<CodeBlockNode> {
   static styles = styles;
 
   @state()

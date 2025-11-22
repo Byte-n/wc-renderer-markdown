@@ -1,14 +1,14 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Image/index.lit.css';
 import { ImageNode } from 'stream-markdown-parser';
 import { property, state } from 'lit/decorators.js';
 import { styleMap } from 'lit/directives/style-map.js';
 import { classMap } from 'lit/directives/class-map.js';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('image')
-export default class extends MarkdownNodeElement<ImageNode> {
+export default class extends NodeElement<ImageNode> {
   static styles = styles;
 
   // 组件属性

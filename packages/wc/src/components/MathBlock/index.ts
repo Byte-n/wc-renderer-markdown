@@ -1,13 +1,13 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import style from '@/components/MathBlock/index.lit.css';
 import { MathBlockNode } from 'stream-markdown-parser';
 import { unsafeHTML } from 'lit/directives/unsafe-html.js';
 import { mathStyles, parseMathString2HTML } from '@/utils/katex';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('math_block')
-export default class extends MarkdownNodeElement<MathBlockNode> {
+export default class extends NodeElement<MathBlockNode> {
   static styles = [...mathStyles, style];
   htmlString: string;
 

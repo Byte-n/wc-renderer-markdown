@@ -1,12 +1,12 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Footnote/index.lit.css';
 import { FootnoteNode } from 'stream-markdown-parser';
 import { property } from 'lit/decorators.js';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('footnote')
-export default class extends MarkdownNodeElement<FootnoteNode> {
+export default class extends NodeElement<FootnoteNode> {
   static styles = styles;
 
   // 内部计算的 fullName，同时反射到 HTML 属性上
@@ -28,7 +28,7 @@ export default class extends MarkdownNodeElement<FootnoteNode> {
         <div class="footnote" id="footnote-${id}">
             <span class="id">[${id}]</span>
             <div class="ch">
-                ${this.renderComponents(this.node.children)}
+                ${renderComponents(this.node.children)}
             </div>
         </div>
     `;

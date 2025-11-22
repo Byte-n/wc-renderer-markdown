@@ -1,19 +1,19 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/DefinitionList/index.lit.css';
 import { DefinitionListNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('definition_list')
-export default class extends MarkdownNodeElement<DefinitionListNode> {
+export default class extends NodeElement<DefinitionListNode> {
   static styles = styles;
 
   render () {
     return html`
         <dl>
             ${this.node.items.map(item => html`
-                <dt>${this.renderComponents(item.term)}</dt>
-                <dd>${this.renderComponents(item.definition)}</dd>
+                <dt>${renderComponents(item.term)}</dt>
+                <dd>${renderComponents(item.definition)}</dd>
             `)}
         </dl>
     `;

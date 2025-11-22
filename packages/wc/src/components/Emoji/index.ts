@@ -1,11 +1,11 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Emoji/index.lit.css';
 import { EmojiNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('emoji')
-export default class extends MarkdownNodeElement<EmojiNode> {
+export default class extends NodeElement<EmojiNode> {
   static styles = styles;
 
   render () {

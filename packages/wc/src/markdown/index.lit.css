@@ -1,10 +1,11 @@
-:host {
+.box {
   font-family: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: #334155;
   background: #fff;
+  padding: 2em;
 }
 
-:host([dark]) {
+:host([dark]) .box {
   color: #e0e0e0;
   background: #1f2937;
 }

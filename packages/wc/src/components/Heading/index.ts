@@ -1,11 +1,11 @@
 import { html, literal } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/Heading/index.lit.css';
 import { HeadingNode } from 'stream-markdown-parser';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponents } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('heading')
-export default class extends MarkdownNodeElement<HeadingNode> {
+export default class extends NodeElement<HeadingNode> {
   static styles = styles;
   private defaultTag = literal`h6`;
   private tags = [
@@ -23,7 +23,7 @@ export default class extends MarkdownNodeElement<HeadingNode> {
 
     return html`
       <${Tag} class="heading-node">
-        ${this.node.children.length ? this.renderComponents(this.node.children) : this.node.text}
+        ${this.node.children.length ? renderComponents(this.node.children) : this.node.text}
       </${Tag}>
     `;
   }

@@ -1,11 +1,11 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import { FootnoteReferenceNode } from 'stream-markdown-parser';
 import style from '@/components/FootnoteReference/index.lit.css';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('footnote_reference')
-export default class extends MarkdownNodeElement<FootnoteReferenceNode> {
+export default class extends NodeElement<FootnoteReferenceNode> {
   static styles = [style];
 
   get href () {

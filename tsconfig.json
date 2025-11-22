@@ -1,31 +1,25 @@
 {
   "compilerOptions": {
-    "target": "ESNext",
-    "jsx": "preserve",
-    "lib": ["DOM", "ESNext"],
-    "baseUrl": ".",
+    "lib": [
+      "ES2015",
+      "dom"
+    ],
+    "target": "ES2015",
     "module": "ESNext",
-    "moduleResolution": "Node",
-    "strict": false,
-    "paths": {
-      "@/*": ["src/*"],
-      // Ensure TypeScript can resolve the local workspace package without a build step in CI
-      "stream-markdown-parser": ["packages/markdown-parser/src/index.ts"],
-      "stream-markdown-parser/*": ["packages/markdown-parser/src/*"]
-    },
+    "moduleResolution": "bundler",
     "resolveJsonModule": true,
-    "types": ["vite/client", "vue"],
-    "allowJs": true,
     "declaration": true,
     "declarationMap": true,
-    "emitDeclarationOnly": false,
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true,
-    "isolatedModules": true,
-    "skipLibCheck": true
-  },
-  "include": ["src/**/*", "./src/shims-vue.d.ts"],
-  "exclude": ["node_modules", "dist",
-      "packages/playground"
-  ]
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "sourceMap": true,
+    "strict": false,
+    "allowJs": true,
+    "experimentalDecorators": true,
+    "useDefineForClassFields": false,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": false
+  }
 }

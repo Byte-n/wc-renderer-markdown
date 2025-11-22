@@ -1,24 +1,29 @@
 {
+  "extends": "../../tsconfig.json",
   "compilerOptions": {
-    "target": "ES2020",
-    "lib": ["dom"],
-    "rootDir": "./src",
-    "module": "ESNext",
-    "moduleResolution": "bundler",
-    "resolveJsonModule": true,
-    "allowJs": false,
-    "declaration": true,
-    "declarationMap": true,
+    "lib": [
+      "dom"
+    ],
+    "rootDir": "./example",
+    "paths": {
+      "@/*": [
+        "./example/*"
+      ],
+      "wc-renderer-markdown": [
+        "../wc"
+      ],
+      "wc-renderer-markdown-react": [
+        "../wc-react"
+      ],
+      "wc-renderer-markdown-vue": [
+        "../wc-vue"
+      ],
+    },
     "outDir": "./dist",
-    "sourceMap": true,
-    "allowSyntheticDefaultImports": true,
-    "esModuleInterop": true,
-    "strict": false,
-    "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "jsx": "react"
   },
   "include": [
-    "src/**/*"
+    "example/**/*"
   ],
   "exclude": [
     "node_modules",

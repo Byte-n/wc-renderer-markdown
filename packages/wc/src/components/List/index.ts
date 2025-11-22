@@ -1,12 +1,11 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/List/index.lit.css';
 import { ListNode } from 'stream-markdown-parser';
-import { renderComponent } from '@/markdown';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement, { renderComponent } from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('list')
-export default class extends MarkdownNodeElement<ListNode> {
+export default class extends NodeElement<ListNode> {
   static styles = styles;
 
   render () {

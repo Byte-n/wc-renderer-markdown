@@ -1,13 +1,13 @@
 import { html } from 'lit/static-html.js';
-import { customElement } from '@/MarkdownNodeElement/customElement';
 import styles from '@/components/TextNode/index.lit.css';
 import { TextNode } from 'stream-markdown-parser';
 import { property } from 'lit/decorators.js';
 import { PropertyValues } from 'lit';
-import MarkdownNodeElement from 'src/MarkdownNodeElement';
+import NodeElement from '@/node/NodeElement';
+import { customElement } from '@/node/customElement';
 
 @customElement('text')
-export default class extends MarkdownNodeElement<TextNode> {
+export default class extends NodeElement<TextNode> {
   static styles = styles;
 
   @property({ type: Boolean, reflect: true, attribute: 'center' })

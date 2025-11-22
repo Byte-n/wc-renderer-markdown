@@ -40,6 +40,7 @@ const config = [
             format: 'esm',
             sourcemap: true,
         },
+        external: [/^lit[/\w]*/],
         plugins: [
             alias({
                 entries: [{ find: '@', replacement: path.resolve(dir, 'src') }],

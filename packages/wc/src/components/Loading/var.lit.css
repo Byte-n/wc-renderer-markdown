@@ -1,0 +1,43 @@
+:host {
+  --loading-bg: rgba(0, 0, 0, 0.05);
+  --loading-gradient: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    rgba(68, 138, 255, 0.1) 25%,
+    rgba(68, 138, 255, 0.3) 30%,
+    rgba(68, 138, 255, 0.6) 35%,
+    #448aff 40%,
+    #2979ff 45%,
+    #1976ff 50%,
+    #2979ff 55%,
+    #448aff 60%,
+    rgba(68, 138, 255, 0.6) 65%,
+    rgba(68, 138, 255, 0.3) 70%,
+    rgba(68, 138, 255, 0.1) 75%,
+    transparent 80%,
+    transparent 100%
+  );
+}
+
+:host([dark]) {
+  --loading-bg: rgba(255, 255, 255, 0.05);
+  --loading-gradient: linear-gradient(
+    90deg,
+    transparent 0%,
+    transparent 20%,
+    rgba(130, 177, 255, 0.1) 25%,
+    rgba(130, 177, 255, 0.3) 30%,
+    rgba(130, 177, 255, 0.6) 35%,
+    #82b1ff 40%,
+    #448aff 45%,
+    #2979ff 50%,
+    #448aff 55%,
+    #82b1ff 60%,
+    rgba(130, 177, 255, 0.6) 65%,
+    rgba(130, 177, 255, 0.3) 70%,
+    rgba(130, 177, 255, 0.1) 75%,
+    transparent 80%,
+    transparent 100%
+  );
+}

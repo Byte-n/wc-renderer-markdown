@@ -230,6 +230,15 @@ export interface ReferenceNode extends BaseNode {
   id: string
 }
 
+export interface HtmlElementNode extends BaseNode {
+  type: 'html_element'
+  tag: string
+  attrs: Record<string, string> | null
+  children: ParsedNode[] | null
+  openTag: TextNode
+  closeTag: TextNode | null
+}
+
 // Define markdown-it token type
 export interface MarkdownToken {
   type: string
@@ -280,6 +289,7 @@ export type ParsedNode
     | MathInlineNode
     | MathBlockNode
     | ReferenceNode
+    | HtmlElementNode
     | Record<string, unknown>
 export interface CustomComponents {
   text: unknown

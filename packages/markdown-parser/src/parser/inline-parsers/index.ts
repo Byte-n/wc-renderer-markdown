@@ -18,6 +18,7 @@ import { parseSubscriptToken } from './subscript-parser'
 import { parseSuperscriptToken } from './superscript-parser'
 import { parseTextToken } from './text-parser'
 import { parseLabelToken } from './label-parser'
+import { parseHtmlElement } from './html-element-parser'
 
 // Process inline tokens (for text inside paragraphs, headings, etc.)
 export function parseInlineTokens(tokens: MarkdownToken[], raw?: string, pPreToken?: MarkdownToken): ParsedNode[] {
@@ -430,6 +431,19 @@ export function parseInlineTokens(tokens: MarkdownToken[], raw?: string, pPreTok
 
       case 'reference': {
         handleReference(token)
+        break
+      }
+
+      case 'html_inline': {
+        resetCurrentTextNode()
+        const result = parseHtmlElement(tokens, i, raw, parseInlineTokens)
+        if (result) {
+          pushNode(result.node)
+          i = result.nextIndex
+        } else {
+          pushToken(token)
+          i++
+        }
         break
       }
 
