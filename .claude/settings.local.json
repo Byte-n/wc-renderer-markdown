@@ -1,7 +1,12 @@
 {
   "permissions": {
     "allow": [
-      "Bash(mkdir:*)"
+      "Bash(mkdir:*)",
+      "Bash(pnpm test:*)",
+      "Bash(xcopy:*)",
+      "Bash(robocopy:*)",
+      "Bash(echo:*)",
+      "Bash(pnpm test:run:*)"
     ],
     "deny": [],
     "ask": []

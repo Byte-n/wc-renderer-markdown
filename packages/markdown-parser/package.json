@@ -48,8 +48,6 @@
   "scripts": {
     "dev": "tsdown --watch",
     "build": "tsdown",
-    "test": "vitest",
-    "test:run": "vitest --run",
     "typecheck": "tsc --noEmit",
     "lint": "eslint . --cache",
     "lint:fix": "eslint . --cache --fix",
