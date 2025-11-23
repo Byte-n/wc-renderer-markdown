@@ -19,19 +19,19 @@
 ### 基础版本
 
 ```bash
-npm install wc-renderer-markdown
+npm install wc-renderer-markdown  @lit/context^1.0.0 lit^3.1.4
 ```
 
 ### Vue 封装版本
 
 ```bash
-npm install wc-renderer-markdown-vue
+npm install wc-renderer-markdown @lit/context^1.0.0 lit^3.1.4 wc-renderer-markdown-vue
 ```
 
 ### React 封装版本
 
 ```bash
-npm install wc-renderer-markdown-react
+npm install wc-renderer-markdown @lit/context^1.0.0 lit^3.1.4 wc-renderer-markdown-react
 ```
 
 ## 使用

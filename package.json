@@ -21,7 +21,7 @@
     "lint": "npm run lint:es && npm run lint:css",
     "lint:css": "stylelint \"{src,test}/**/*.{css,less}\"",
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
-    "docs:build": "pnpm run --filter ./packages/playground build",
+    "docs:build": "pnpm run --filter ./packages/doc build",
     "publish:all": "pnpm --filter ./packages/wc publish && pnpm --filter ./packages/wc-vue publish && pnpm --filter ./packages/wc-react publish"
   },
   "devDependencies": {

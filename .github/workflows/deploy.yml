@@ -46,7 +46,7 @@ jobs:
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: packages/playground/docs/.vitepress/dist
+          path: packages/doc/docs/.vitepress/dist
 
   # 部署工作
   deploy:

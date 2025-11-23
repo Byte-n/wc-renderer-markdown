@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML Playground - WC Markdown Renderer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+          'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+          sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+
+      .container {
+        display: flex;
+        height: 100vh;
+        gap: 1rem;
+        padding: 1rem;
+      }
+
+      .editor-panel,
+      .preview-panel {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+      }
+
+      h3 {
+        margin-bottom: 0.5rem;
+      }
+
+      .editor {
+        flex: 1;
+        font-family: monospace;
+        padding: 0.5rem;
+        font-size: 14px;
+        resize: none;
+        border: 1px solid #ccc;
+      }
+
+      .preview-content {
+        flex: 1;
+        border: 1px solid #ccc;
+        padding: 1rem;
+        overflow: auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="editor-panel">
+        <h3>Markdown Input</h3>
+        <textarea id="editor" class="editor"></textarea>
+      </div>
+      <div class="preview-panel">
+        <h3>Preview</h3>
+        <div class="preview-content">
+          <wc-markdown id="renderer"></wc-markdown>
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.ts"></script>
+  </body>
+</html>
