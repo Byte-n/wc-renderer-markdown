@@ -1,5 +1,5 @@
-import { defineComponent, h, Vue, Vue2, isVue3  } from 'vue-demi';
-import MarkdownElement, { HtmlNodeElement, NodeElement, BaseNode, use as _use } from 'wc-renderer-markdown';
+import { defineComponent, h, isVue3, Vue, Vue2 } from 'vue-demi';
+import MarkdownElement, { BaseNode, HtmlNodeElement, NodeElement, use as _use } from 'wc-renderer-markdown';
 
 export interface NodeProps<Node extends BaseNode> {
   node: Node;
@@ -24,12 +24,14 @@ export default function use<
   nodeType: string,
   Component: any,
   elementName?: string,
+  styles?: typeof HtmlNodeElement.styles,
 ) {
   let Clazz: CustomElementConstructor;
 
   if (type === 'htmlNode') {
     class A extends HtmlNodeElement<any> {
       private vueApp: VueRenderer | null = null;
+      static styles = styles ?? [];
 
       connectedCallback () {
         super.connectedCallback();

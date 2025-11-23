@@ -39,45 +39,48 @@ npm install wc-renderer-markdown-react
 ### 原生 Web Components
 
 ```html
+
 <script type="module">
   import 'wc-renderer-markdown';
 </script>
 
-<wc-markdown>
-  # Hello World
-
-  This is **markdown** content.
-</wc-markdown>
+<wc-markdown content="# Hello World"/>
 ```
 
 ### Vue
 
 ```vue
+
 <script setup>
-import { WcMarkdown } from 'wc-renderer-markdown-vue';
+  import WcMarkdown from 'wc-renderer-markdown-vue';
+
+  const content = `
+# Hello World
+
+This is **markdown** content.
+`
 </script>
 
 <template>
-  <WcMarkdown>
-    # Hello World
-
-    This is **markdown** content.
-  </WcMarkdown>
+  <WcMarkdown
+    :content="content"
+  />
 </template>
 ```
 
 ### React
 
 ```jsx
-import { WcMarkdown } from 'wc-renderer-markdown-react';
+import WcMarkdown from 'wc-renderer-markdown-react';
 
-function App() {
+function App () {
+  const content = `
+# Hello World
+
+This is **markdown** content.
+`
   return (
-    <WcMarkdown>
-      # Hello World
-
-      This is **markdown** content.
-    </WcMarkdown>
+    <WcMarkdown content={content}/>
   );
 }
 ```
@@ -95,7 +98,8 @@ function App() {
 
 本项目借鉴了以下开源项目：
 
-- [stream-markdown-parser](https://github.com/Simon-He95/vue-markdown-renderer/tree/main/packages/markdown-parser) - Markdown 解析器的实现参考
+- [stream-markdown-parser](https://github.com/Simon-He95/vue-markdown-renderer/tree/main/packages/markdown-parser) -
+  Markdown 解析器的实现参考
 - UI 设计也参考了该库的设计理念
 
 感谢开源社区的贡献！

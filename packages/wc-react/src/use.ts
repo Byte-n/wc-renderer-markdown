@@ -19,7 +19,7 @@ export interface ReactRenderer {
 
 export default function use<
   Type extends 'node' | 'htmlNode',
-  Node extends BaseNode = any
+  Node extends BaseNode = any,
 > (
   type: Type,
   nodeType: string,
@@ -27,6 +27,7 @@ export default function use<
     Type extends 'node' ? NodeProps<Node> : HtmlNodeProps
   >,
   elementName?: string,
+  styles?: typeof HtmlNodeElement.styles
 ) {
 
 
@@ -35,6 +36,7 @@ export default function use<
   if (type === 'htmlNode') {
     class A extends HtmlNodeElement<any> {
       private root: any;
+      static styles = styles ?? []
 
       connectedCallback () {
         super.connectedCallback();
@@ -75,6 +77,7 @@ export default function use<
   } else {
     class A extends NodeElement<Node, any> {
       private root: any;
+      static styles = styles ?? []
 
       connectedCallback () {
         super.connectedCallback();

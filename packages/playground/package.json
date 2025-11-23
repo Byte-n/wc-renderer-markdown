@@ -1,7 +1,7 @@
 {
   "name": "playground",
   "type": "module",
-  "version": "0.0.10",
+  "version": "0.0.2",
   "packageManager": "pnpm@10.20.0",
   "scripts": {
     "deploy": "gh-pages -d docs-dist",

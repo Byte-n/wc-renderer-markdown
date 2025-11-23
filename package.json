@@ -25,19 +25,11 @@
     "publish:all": "pnpm --filter ./packages/wc publish && pnpm --filter ./packages/wc-vue publish && pnpm --filter ./packages/wc-react publish"
   },
   "devDependencies": {
-    "@rolldown/binding-win32-x64-msvc": "1.0.0-beta.45",
-    "@types/node": "^22.18.13",
-    "tsdown": "^0.15.12",
-    "typescript": "^5.9.3",
-    "vitest": "^3.2.4",
-    "husky": "^8.0.1",
+    "@changesets/cli": "^2.29.7",
     "@commitlint/cli": "^17.1.2",
     "@commitlint/config-conventional": "^17.1.0",
-    "lint-staged": "^13.0.3",
-    "prettier": "^2.7.1",
-    "prettier-plugin-organize-imports": "^3.0.0",
-    "prettier-plugin-packagejson": "^2.2.18",
-    "stylelint": "^14.9.1",
+    "@rolldown/binding-win32-x64-msvc": "1.0.0-beta.45",
+    "@types/node": "^22.18.13",
     "@typescript-eslint/eslint-plugin": "^8.24.0",
     "eslint": "^8.26.0",
     "eslint-config-ay": "^1.0.6",
@@ -46,7 +38,16 @@
     "eslint-plugin-import": "^2.31.0",
     "eslint-plugin-prettier": "^5.2.3",
     "eslint-plugin-react": "^7.37.4",
-    "eslint-plugin-require-jsdoc-except": "^1.5.0"
+    "eslint-plugin-require-jsdoc-except": "^1.5.0",
+    "husky": "^8.0.1",
+    "lint-staged": "^13.0.3",
+    "prettier": "^2.7.1",
+    "prettier-plugin-organize-imports": "^3.0.0",
+    "prettier-plugin-packagejson": "^2.2.18",
+    "stylelint": "^14.9.1",
+    "tsdown": "^0.15.12",
+    "typescript": "^5.9.3",
+    "vitest": "^3.2.4"
   },
   "commitlint": {
     "extends": [

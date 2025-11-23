@@ -1,7 +1,7 @@
 {
   "name": "wc-renderer-markdown-react",
   "type": "module",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "React wrapper for wc-renderer-markdown - 基于 Web Components 的 Markdown 渲染器 React 封装",
   "author": "Byte-n",
   "license": "MIT",

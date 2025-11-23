@@ -1,7 +1,7 @@
 {
     "name": "wc-renderer-markdown",
     "type": "module",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "基于 Web Components 的现代化 Markdown 渲染器",
     "author": "Byte-n",
     "license": "MIT",
