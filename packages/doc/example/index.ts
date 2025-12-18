@@ -57,6 +57,9 @@ class HomeExample extends LitElement {
   @state()
   isDark: boolean = false;
 
+  @state()
+  isHovering: boolean = false;
+
   private observer?: MutationObserver;
 
   connectedCallback () {
@@ -82,15 +85,23 @@ class HomeExample extends LitElement {
     this.observer?.disconnect();
   }
 
+  private handleMouseEnter = () => {
+    this.isHovering = true;
+  };
+
+  private handleMouseLeave = () => {
+    this.isHovering = false;
+  };
+
   protected render () {
     return html`
       <div class="body">
-        <div id="app">
+        <div id="app" @mouseenter="${this.handleMouseEnter}" @mouseleave="${this.handleMouseLeave}">
           <div class="card-header">
             <span>wc-renderer-markdown</span>
           </div>
           <div class="card-content">
-            <wc-markdown ?dark="${this.isDark}" .content="${this.content}" auto-scroll-2-end/>
+            <wc-markdown ?dark="${this.isDark}" .content="${this.content}" ?auto-scroll-2-end="${!this.isHovering}"/>
           </div>
         </div>
       </div>
